@@ -1,0 +1,23 @@
+CREATE TABLE Level
+(  
+    ID  int PRIMARY KEY NOT NULL IDENTITY(1,1),  
+    NAME varchar(50) NOT NULL
+);
+
+
+
+CREATE TABLE Users
+(  
+    ID  int PRIMARY KEY NOT NULL IDENTITY(1,1),  
+    NAME varchar(50) NOT NULL,
+	LOGIN varchar(50) NOT NULL,
+	PASSWORD varchar(50) Not null,
+	ID_LEVEL INT NOT NULL,
+
+	CONSTRAINT FK_level
+FOREIGN KEY (ID_LEVEL) REFERENCES Level (ID),
+
+);
+
+
+
